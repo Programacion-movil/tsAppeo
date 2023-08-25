@@ -8,7 +8,7 @@ import { MarcarAsistenciaPageRoutingModule } from './marcar-asistencia-routing.m
 
 import { MarcarAsistenciaPage } from './marcar-asistencia.page';
 
-import { ComponentsModule } from 'src/app/components/components.module'; 
+import { ComponentModuleModule } from 'src/app/components/component-module/component-module.module';
 
 @NgModule({
   imports: [
@@ -16,7 +16,7 @@ import { ComponentsModule } from 'src/app/components/components.module';
     FormsModule,
     IonicModule,
     MarcarAsistenciaPageRoutingModule,
-    ComponentsModule
+    ComponentModuleModule
   ],
   declarations: [MarcarAsistenciaPage]
 })
