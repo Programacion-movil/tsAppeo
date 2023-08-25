@@ -28,4 +28,4 @@ import { AppSideMenuComponent } from './app-side-menu/app-side-menu.component';
     RouterModule
   ]
 })
-export class Components { }
+export class ComponentsModule { }
