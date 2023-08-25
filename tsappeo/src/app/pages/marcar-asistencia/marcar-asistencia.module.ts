@@ -8,12 +8,15 @@ import { MarcarAsistenciaPageRoutingModule } from './marcar-asistencia-routing.m
 
 import { MarcarAsistenciaPage } from './marcar-asistencia.page';
 
+import { Components } from 'src/app/components/components.module'; 
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    MarcarAsistenciaPageRoutingModule
+    MarcarAsistenciaPageRoutingModule,
+    Components
   ],
   declarations: [MarcarAsistenciaPage]
 })
