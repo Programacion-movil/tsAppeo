@@ -4,16 +4,19 @@ import { IonicModule } from '@ionic/angular';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { TabsComponent } from './tabs/tabs.component';
+import { HeaderComponent } from './header/header.component';
 
 
 
 @NgModule({
   declarations: [
     TabsComponent,
+    HeaderComponent,
 
   ],
   exports: [
     TabsComponent,
+    HeaderComponent,
 
   ],
   imports: [
