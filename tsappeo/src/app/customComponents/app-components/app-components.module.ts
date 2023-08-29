@@ -14,7 +14,6 @@ import { SidebarComponent } from './sidebar/sidebar.component';
     TabsComponent,
     HeaderComponent,
     SidebarComponent
-
   ],
   exports: [
     TabsComponent,
