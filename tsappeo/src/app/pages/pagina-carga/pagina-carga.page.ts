@@ -10,6 +10,13 @@ export class PaginaCargaPage implements OnInit {
   constructor() { }
 
   ngOnInit() {
+
+    setTimeout(() => {
+      console.log('funciono');
+    }, 5000);
   }
 
-}
+  
+  }
+
+
