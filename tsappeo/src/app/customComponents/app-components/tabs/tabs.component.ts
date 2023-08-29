@@ -16,12 +16,14 @@ export class TabsComponent  implements OnInit {
     this.router.navigate(['/marcar-asistencia'])
   }
 
-  RedirectToList(){
+  RedirectToPerfil(){
     this.router.navigate(['/perfil'])
   }
 
-  RedirectToPerfil(){
+  RedirectToList(){
     this.router.navigate(['/registro-asistencia'])
   }
+
+  
 
 }
