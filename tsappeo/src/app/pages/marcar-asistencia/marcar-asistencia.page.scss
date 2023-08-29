@@ -1,10 +1,52 @@
 .marcar-asistencia-content {
-    padding-top: 50% !important;
-    padding-bottom: 50% !important;
+    text-align: center;
 }
 
-.btnPrueba {
-    display: flex!important;
+.btn-marcar {
+    display: flex !important;
     width: 199px;
     height: 62px;
+    background-color: #000000;
+    border-radius: 40px;
+    font-size: 15px;
 }
+
+.centrar-boton {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.col-btn-marcar {
+    border-radius: 40px;
+}
+
+ion-icon {
+    font-size: 50px;
+}
+
+ion-modal#example-modal {
+    --width: fit-content;
+    --min-width: 250px;
+    --height: fit-content;
+    --border-radius: 6px;
+    --box-shadow: 0 28px 48px rgba(0, 0, 0, 0.4);
+  }
+  
+  ion-modal#example-modal h1 {
+    margin: 20px 20px 10px 20px;
+  }
+  
+  ion-modal#example-modal ion-icon {
+    margin-right: 6px;
+    width: 48px;
+    height: 48px;
+    padding: 4px 0;
+    color: #aaaaaa;
+  }
+  
+  ion-modal#example-modal .wrapper {
+    margin-bottom: 10px;
+  }

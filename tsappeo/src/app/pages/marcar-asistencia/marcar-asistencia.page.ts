@@ -12,8 +12,12 @@ export class MarcarAsistenciaPage implements OnInit {
   ngOnInit() {
   }
 
-  RedirectToList(){
+  RedirectToList() {
     this.router.navigate(['/registro-asistencia'])
+  }
+
+  LevantarModalRegistroOk() {
+
   }
 
 }
