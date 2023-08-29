@@ -1,10 +1,11 @@
 .marcar-asistencia-content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: flex!important;
+    align-content: center!important;
+    align-items: center!important;
 }
 
 .btnPrueba {
+    display: flex!important;
     width: 199px;
     height: 62px;
 }
