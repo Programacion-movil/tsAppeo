@@ -23,30 +23,47 @@
     border-radius: 40px;
 }
 
-ion-icon {
-    font-size: 50px;
+.marcar-icon {
+  font-size: 50px;
 }
 
-ion-modal#example-modal {
+ion-modal#confirmation-modal {
     --width: fit-content;
     --min-width: 250px;
     --height: fit-content;
     --border-radius: 6px;
     --box-shadow: 0 28px 48px rgba(0, 0, 0, 0.4);
-  }
+}
+
+.wrapper {
+  background-color: #000000;
+}
+
+.confirmation-modal {
+  background-color: #000000;
   
-  ion-modal#example-modal h1 {
-    margin: 20px 20px 10px 20px;
-  }
-  
-  ion-modal#example-modal ion-icon {
-    margin-right: 6px;
-    width: 48px;
-    height: 48px;
-    padding: 4px 0;
-    color: #aaaaaa;
-  }
-  
-  ion-modal#example-modal .wrapper {
-    margin-bottom: 10px;
-  }
+}
+
+.modal-ok {
+  width: 250px;
+  height: 261px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.icono-ok {
+  color: green;
+  width: 200px;
+  height: 160px;
+}
+
+.registro-ok {
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
