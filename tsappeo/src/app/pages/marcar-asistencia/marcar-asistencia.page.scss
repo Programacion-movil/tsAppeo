@@ -1,11 +1,69 @@
 .marcar-asistencia-content {
-    display: flex!important;
-    align-content: center!important;
-    align-items: center!important;
+    text-align: center;
 }
 
-.btnPrueba {
-    display: flex!important;
+.btn-marcar {
+    display: flex !important;
     width: 199px;
     height: 62px;
+    background-color: #000000;
+    border-radius: 40px;
+    font-size: 15px;
+}
+
+.centrar-boton {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.col-btn-marcar {
+    border-radius: 40px;
+}
+
+.marcar-icon {
+  font-size: 50px;
+}
+
+ion-modal#confirmation-modal {
+    --width: fit-content;
+    --min-width: 250px;
+    --height: fit-content;
+    --border-radius: 6px;
+    --box-shadow: 0 28px 48px rgba(0, 0, 0, 0.4);
+}
+
+.wrapper {
+  background-color: #000000;
+}
+
+.confirmation-modal {
+  background-color: #000000;
+  
+}
+
+.modal-ok {
+  width: 250px;
+  height: 261px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.icono-ok {
+  color: green;
+  width: 200px;
+  height: 160px;
+}
+
+.registro-ok {
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
