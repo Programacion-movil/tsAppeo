@@ -6,26 +6,58 @@
 
 <ion-content [fullscreen]="true">
   <ion-grid>
-    <ion-row>
-      <ion-col>PERFIL</ion-col>
+    <ion-row >
+      <ion-col id="centrar">PERFIL</ion-col>
     </ion-row>
-      <ion-row>
-        <ion-col>
-        
+      <ion-row >
+        <ion-col> 
           <ion-item>
             <ion-textarea [readonly]="true" label="Nombre:" placeholder="____________________"></ion-textarea>
           </ion-item>
-        
-        </ion-col>
-        
+        </ion-col> 
+      </ion-row>
+
+      <ion-row>
+        <ion-col> 
+          <ion-item>
+            <ion-textarea [readonly]="true" label="Rut:" placeholder="____________________"></ion-textarea>
+          </ion-item>
+        </ion-col> 
+      </ion-row>
+
+      <ion-row>
+        <ion-col> 
+          <ion-item>
+            <ion-textarea [readonly]="true" label="Carrera:" placeholder="____________________"></ion-textarea>
+          </ion-item>
+        </ion-col> 
+      </ion-row>
+
+      <ion-row>
+        <ion-col> 
+          <ion-item > 
+            <ion-textarea  [readonly]="true" label="Correo:" placeholder="____________________"></ion-textarea>
+          </ion-item>
+        </ion-col> 
+      </ion-row>
+      
+
+      <ion-row > 
+        <ion-col id="derecha">Nombre:</ion-col>
+        <ion-col id="izquierda">_______________</ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col id="derecha">Rut:</ion-col>
+        <ion-col id="izquierda">_______________</ion-col>
       </ion-row>
       <ion-row>
-        <ion-col>Rut</ion-col>
-        <ion-col>_______________</ion-col>
+        <ion-col id="derecha">Carrera:</ion-col>
+        <ion-col id="izquierda">_______________</ion-col>
       </ion-row>
       <ion-row>
-        <ion-col>Carrera:</ion-col>
-        <ion-col>_______________</ion-col>
+        <ion-col id="derecha">Correo:</ion-col>
+        <ion-col id="izquierda">_______________</ion-col>
       </ion-row>
   </ion-grid>
  
