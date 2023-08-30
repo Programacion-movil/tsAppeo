@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, RouterLink } from '@angular/router';
+import { PaginaCargaPageModule } from './pagina-carga.module';
 
 @Component({
   selector: 'app-pagina-carga',
@@ -7,16 +9,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PaginaCargaPage implements OnInit {
 
-  constructor() { }
+  constructor(private router : Router) {}
+
+  siguientePagina(){
+    this.router.navigate(['/login'])
+  }
 
   ngOnInit() {
-
+    
+    
     setTimeout(() => {
-      console.log('funciono');
+      this.siguientePagina()
+      ;
     }, 5000);
+    
   }
-
   
-  }
+
+   
+}
 
 
