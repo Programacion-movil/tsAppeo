@@ -1,4 +1,4 @@
-<ion-header [translucent]="true">
+<ion-header [translucent]="true"> 
   <app-header>
   </app-header>
 </ion-header>
@@ -6,27 +6,41 @@
 
 <ion-content [fullscreen]="true">
   <ion-grid>
-    <ion-row>
-      <ion-col>PERFIL</ion-col>
+    <ion-row >
+      <ion-col id="titulo" >PERFIL</ion-col>
     </ion-row>
-      <ion-row>
-        <ion-col>
-        
+      <ion-row >
+        <ion-col> 
           <ion-item>
-            <ion-textarea [readonly]="true" label="Nombre:" placeholder="____________________"></ion-textarea>
+            <ion-textarea [readonly]="true" label="Nombre:" placeholder="Juanito Perez"></ion-textarea>
           </ion-item>
-        
-        </ion-col>
-        
+        </ion-col> 
       </ion-row>
+
       <ion-row>
-        <ion-col>Rut</ion-col>
-        <ion-col>_______________</ion-col>
+        <ion-col> 
+          <ion-item>
+            <ion-textarea [readonly]="true" label="Rut:" placeholder="15.444.555-K"></ion-textarea>
+          </ion-item>
+        </ion-col> 
       </ion-row>
+
       <ion-row>
-        <ion-col>Carrera:</ion-col>
-        <ion-col>_______________</ion-col>
+        <ion-col> 
+          <ion-item>
+            <ion-textarea [readonly]="true" label="Carrera:" placeholder="Analista"></ion-textarea>
+          </ion-item>
+        </ion-col> 
       </ion-row>
+
+      <ion-row>
+        <ion-col> 
+          <ion-item > 
+            <ion-textarea  [readonly]="true" label="Correo:" placeholder="juanito.perez@duocuc.cl"></ion-textarea>
+          </ion-item>
+        </ion-col> 
+      </ion-row>
+      
   </ion-grid>
  
 </ion-content>

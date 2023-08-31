@@ -8,12 +8,15 @@ import { RegistroAsistenciaPageRoutingModule } from './registro-asistencia-routi
 
 import { RegistroAsistenciaPage } from './registro-asistencia.page';
 
+import { AppComponentsModule } from 'src/app/customComponents/app-components/app-components.module';
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    RegistroAsistenciaPageRoutingModule
+    RegistroAsistenciaPageRoutingModule,
+    AppComponentsModule
   ],
   declarations: [RegistroAsistenciaPage]
 })
