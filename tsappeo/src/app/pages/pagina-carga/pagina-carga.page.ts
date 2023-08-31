@@ -21,7 +21,7 @@ export class PaginaCargaPage implements OnInit {
     setTimeout(() => {
       this.siguientePagina()
       ;
-    }, 5000);
+    }, 3000);
     
   }
   
