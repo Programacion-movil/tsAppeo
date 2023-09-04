@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AlertController } from '@ionic/angular';
 @Component({
   selector: 'app-marcar-asistencia',
   templateUrl: './marcar-asistencia.page.html',
@@ -7,7 +8,7 @@ import { Router } from '@angular/router';
 })
 export class MarcarAsistenciaPage implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private alertController: AlertController) { }
 
   ngOnInit() {
   }
@@ -16,8 +17,14 @@ export class MarcarAsistenciaPage implements OnInit {
     this.router.navigate(['/registro-asistencia'])
   }
 
-  LevantarModalRegistroOk() {
+  async registroExitoso() {
+    const alert = await this.alertController.create({
+      header: 'Listo!',
+      message: 'Marcaste tu asistencia correctamente',
+      buttons: ['OK'],
+    });
 
+    await alert.present();
   }
 
 }
