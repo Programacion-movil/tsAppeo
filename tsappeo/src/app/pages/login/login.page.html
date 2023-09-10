@@ -11,13 +11,14 @@
     <ion-row>
       <ion-col size="12" class="background-header">
         <ion-title id="header">
-          <ion-img src="../assets/img/logo_tsappeo_login.png" id="logo"></ion-img>
+          <ion-img src="../assets/img/logo_tsappeo_login_ok.png" id="logo"></ion-img>
         </ion-title>
       </ion-col>      
     </ion-row>   
 </ion-header>
 
 <ion-content>
+  <div>
   <form>
     <ion-item lines="full">
       <ion-label position="floating">Email</ion-label>
@@ -28,10 +29,11 @@
       <ion-input type="password" required></ion-input>
     </ion-item>
     <ion-row>
-      <ion-col>
-        <ion-button type="submit" color="danger" expand="block">Ingresar</ion-button>
-        <a [routerLink]="['/forgot-password']" class="small-text">Olvidó Password?</a>
+      <ion-col class="btn-marcar">
+        <ion-button  type="submit" color="danger" expand="block">Ingresar</ion-button>
+        <a [routerLink]="['/forgot-password']" class="small-text">¿Olvidó su contraseña?</a>
       </ion-col>
     </ion-row>
   </form>
+</div>
 </ion-content>
