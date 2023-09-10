@@ -20,7 +20,7 @@ export class MarcarAsistenciaPage implements OnInit {
   async registroExitoso() {
     const alert = await this.alertController.create({
       header: 'Listo!',
-      message: 'Marcaste tu asistencia correctamente',
+      message: 'Marcaste tu asistencia correctamente, se ha enviado un comprobante a tu correo electrónico',
       buttons: ['OK'],
     });
 
