@@ -1,29 +1,30 @@
 <ion-menu contentId="main-content">
   <ion-header>
-    <ion-toolbar>
+    <ion-toolbar color="medium">
       <ion-title>tsAPPeo</ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <ion-list>
+  <ion-list >
     <ion-item-group>
-      <ion-item-divider>
+      <ion-item-divider color="medium">
         <ion-label> MENU </ion-label>
       </ion-item-divider>
   
-      <ion-item>
+      <ion-item color="medium">
         <ion-label> AYUDA </ion-label>
       </ion-item>
-      <ion-item>
+      <ion-item color="medium">
         <ion-label> ACERCA DE </ion-label>
-      </ion-item>
-      <ion-item lines="none">
+      </ion-item >
+      <ion-item color="medium" lines="none">
         <ion-label></ion-label>
       </ion-item>
     </ion-item-group>
   </ion-list>
 
-  <ion-content class="ion-padding cerrar-sesion" (click)="doLogOut()" >CERRAR SESIÓN</ion-content>
+  <ion-content color="medium" class="ion-padding cerrar-sesion" (click)="doLogOut()" >CERRAR SESIÓN    
+  </ion-content>
 </ion-menu>
 
 
