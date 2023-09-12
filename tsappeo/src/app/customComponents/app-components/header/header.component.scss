@@ -4,18 +4,18 @@
     height: 80px;
     float: left;
     padding: 5px;
-    background-color: #f4e21a;
+    background-color: var(--ion-color-primary);
     
 }
 
 #header{
     text-align: center;  
-    background-color: #f4e21a;
+    background-color: var(--ion-color-primary);
 }
 
 .background-header {
-    background-color: #f4e21a;
-    border-color: #f4e21a;
+    background-color: var(--ion-color-primary);
+    border-color: var(--ion-color-primary);
 }
 
 ion-menu-button {

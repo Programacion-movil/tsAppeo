@@ -18,11 +18,11 @@ export class PaginaCargaPage implements OnInit {
   ngOnInit() {
     
     
-    setTimeout(() => {
+   /* setTimeout(() => {
       this.siguientePagina()
       ;
     }, 3000);
-    
+    */
   }
   
 
