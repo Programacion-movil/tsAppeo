@@ -31,6 +31,10 @@ const routes: Routes = [
     path: 'pagina-carga',
     loadChildren: () => import('./pages/pagina-carga/pagina-carga.module').then( m => m.PaginaCargaPageModule)
   },
+  {
+    path: 'ayuda',
+    loadChildren: () => import('./pages/ayuda/ayuda.module').then( m => m.AyudaPageModule)
+  },
 ];
 
 @NgModule({
