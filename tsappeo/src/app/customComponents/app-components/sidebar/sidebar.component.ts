@@ -17,4 +17,8 @@ export class SidebarComponent  implements OnInit {
     this.router.navigate(['/login'])
   }
 
+  RedirectToAyuda(){
+    this.router.navigate(['/ayuda'])
+  }
+
 }
