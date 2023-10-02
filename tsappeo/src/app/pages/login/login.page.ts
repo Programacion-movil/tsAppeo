@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthServiceService } from 'src/app/firebaseAuthService/auth-service.service'; 
 
 @Component({
   selector: 'app-login',
@@ -7,17 +8,33 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage implements OnInit {
-
-  userName: string = "";
-
-  constructor(private router: Router) { }
+  
+  constructor(
+    private router: Router,
+    public fireAuthService: AuthServiceService) { }
 
   ngOnInit() {
   }
 
-  login() {
-    localStorage.setItem('userName' , this.userName);
-    this.router.navigate(['/marcar-asistencia'])
+  email: string = "";
+  password: string = "";
+
+  async login() {
+
+    try {
+      const user = await this.fireAuthService.doLogin(this.email, this.password);
+      if (user) { //La autenticación fue correcta
+        this.router.navigate(['/registro-asistencia']);
+      } else {
+        
+      }
+    } catch (error) {
+      console.error("Error de autenticación:");
+      return
+    }
+
+    //localStorage.setItem('Email' , this.email);
+    //this.router.navigate(['/marcar-asistencia'])
   }
 
 }
