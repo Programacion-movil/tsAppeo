@@ -19,7 +19,7 @@ export class AuthServiceService {
     return await this.ngFireAuth.signOut()
   }
 
-  async getProfiole(){
+  async getProfile(){
     return await this.ngFireAuth.currentUser
   }
 }

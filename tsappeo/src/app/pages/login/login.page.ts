@@ -24,6 +24,8 @@ export class LoginPage implements OnInit {
     try {
       const user = await this.fireAuthService.doLogin(this.email, this.password);
       if (user) { //La autenticación fue correcta
+        const userInfo = await this.fireAuthService.getProfile()
+        localStorage.setItem("userInfo", JSON.stringify(userInfo)); //Se guarda la información del usuario en localstorage
         this.router.navigate(['/registro-asistencia']);
       } else {
         
