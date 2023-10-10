@@ -32,7 +32,6 @@ export class PerfilPage implements OnInit {
   
     let sub = this.crud.getSubcollection(path, 'profile').subscribe(
       (res: any) => {
-        this.utils.setElementInLocalStorage('res', res);
         console.log(res);
         this.perfil = res[0]; // Se llena el objeto perfil para usarlo en el front
         sub.unsubscribe();
