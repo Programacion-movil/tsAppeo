@@ -4,13 +4,13 @@
 
 export const environment = {
   production: false,
-  firebaseConfig : {
-    apiKey: "AIzaSyD0aeOKY7Qkk8ehvfr4hAmDP9sz7Dhe7AA",
-    authDomain: "prueba2-f980b.firebaseapp.com",
-    projectId: "prueba2-f980b",
-    storageBucket: "prueba2-f980b.appspot.com",
-    messagingSenderId: "498622889964",
-    appId: "1:498622889964:web:fa845c9897abcb1c62cac9"
+  firebaseConfig : { // Se está usando el del correo pagapp
+    apiKey: "AIzaSyAJMuFY0ye_R2Npr6yaYNfkEWLmjllUeFw",
+    authDomain: "tsappeo.firebaseapp.com",
+    projectId: "tsappeo",
+    storageBucket: "tsappeo.appspot.com",
+    messagingSenderId: "877182790363",
+    appId: "1:877182790363:web:6583bec0c77ce9b3d9bafe"
   }
 };
 

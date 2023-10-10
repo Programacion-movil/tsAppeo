@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { Router } from '@angular/router';
 
-import { AuthServiceService } from 'src/app/firebaseAuthService/auth-service.service';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-sidebar',
@@ -12,12 +12,12 @@ import { AuthServiceService } from 'src/app/firebaseAuthService/auth-service.ser
 export class SidebarComponent  implements OnInit {
 
   constructor(private router: Router,
-    public authService: AuthServiceService) { }
+    public auth: AuthService) { }
 
   ngOnInit() {}
 
   async doLogOut() {
-    await this.authService.doLogOut()
+    await this.auth.doLogOut()
     this.router.navigate(['/login'])
   }
 

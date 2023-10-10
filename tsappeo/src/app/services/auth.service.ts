@@ -1,13 +1,12 @@
 import { Injectable } from '@angular/core';
-import  firebase  from 'firebase/compat/app';
 import { AngularFireAuth } from '@angular/fire/compat/auth'
 
 @Injectable({
   providedIn: 'root'
 })
-export class AuthServiceService {
+export class AuthService {
 
-  constructor(public ngFireAuth: AngularFireAuth) { }
+  constructor(private ngFireAuth: AngularFireAuth) { }
 
   // Login usando email y contraseña
   async doLogin(email:string, password:string) {
@@ -19,7 +18,10 @@ export class AuthServiceService {
     return await this.ngFireAuth.signOut()
   }
 
+  // Obtener la información del usuario
   async getProfile(){
     return await this.ngFireAuth.currentUser
   }
+
+  
 }
