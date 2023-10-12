@@ -13,6 +13,7 @@ import { UtilsService } from 'src/app/services/utils.service';
 export class HeaderComponent  implements OnInit {
 
   userName: string = this.utils.getElementInLocalStorage('userData').email
+  
 
   constructor(
     private utils: UtilsService

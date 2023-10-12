@@ -21,6 +21,7 @@ export class AuthService {
   // Obtener la información del usuario
   async getProfile(){
     return await this.ngFireAuth.currentUser
+    
   }
 
   
