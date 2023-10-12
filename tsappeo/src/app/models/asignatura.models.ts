@@ -4,10 +4,10 @@ export interface Asignatura {
     nombre_asig: string,
     seccion: string,
     asistencia: Asistencia[]
-
 }
 
 export interface Asistencia {
-    fecha: any,
-    estaPresente: boolean, // Presente = true, Ausente = False
+    fecha: string,
+    hora: string,
+    estaPresente: boolean // Presente = true, Ausente = False
 }

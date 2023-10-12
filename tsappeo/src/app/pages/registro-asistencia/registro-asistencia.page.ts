@@ -22,10 +22,10 @@ export class RegistroAsistenciaPage implements OnInit {
   }
 
   ionViewWillEnter() {
-    this.getAsignaturaData()
+    this.getAsignaturasData()
   }
 
-  getAsignaturaData(){
+  getAsignaturasData(){
     let user: User = this.utils.getElementInLocalStorage('userData')
     let path = `user/${user.uid}`;
 
