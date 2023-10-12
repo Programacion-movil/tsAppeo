@@ -31,6 +31,7 @@ export class LoginPage implements OnInit {
               uid: userInfo.uid,
               email: userInfo.email!
             }
+            console.log(userInfo)
             this.utils.setElementInLocalStorage("userData", userModel); //Guarda userModel en el localstorage para poder utilizarlo en otras pages
             this.utils.routerLink('/marcar-asistencia');
           }

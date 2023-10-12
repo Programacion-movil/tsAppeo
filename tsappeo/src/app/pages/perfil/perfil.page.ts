@@ -46,4 +46,9 @@ export class PerfilPage implements OnInit {
     );
   }
 
+  /*getNombre() {
+    let nombre: User = this.utils.getElementInLocalStorage('name');
+    console.log(nombre);
+  }*/
+
 }
