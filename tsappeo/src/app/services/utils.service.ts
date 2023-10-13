@@ -41,6 +41,11 @@ export class UtilsService {
     localStorage.removeItem(key);
   }
 
+  async presentToast(opts: ToastOptions) {
+    const toast = await this.toastController.create(opts);
+    toast.present();
+  }
+
   // Router
   routerLink(url: string) {
     return this.router.navigateByUrl(url);

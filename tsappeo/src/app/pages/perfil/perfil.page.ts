@@ -19,6 +19,7 @@ export class PerfilPage implements OnInit {
     private utils: UtilsService) { }
 
   ngOnInit() {
+    this.user = this.utils.getElementInLocalStorage('userData');
   }
 
   ionViewWillEnter() {
@@ -26,10 +27,8 @@ export class PerfilPage implements OnInit {
   }
 
   getPefilData() {
-    let user: User = this.utils.getElementInLocalStorage('userData');
-    let path = `user/${user.uid}`;
+    let path = `user/${this.user.uid}`;
 
-  
     let sub = this.crud.getSubcollection(path, 'profile').subscribe(
       (res: any) => {
         console.log(res);
@@ -39,9 +38,6 @@ export class PerfilPage implements OnInit {
       (error) => {
         console.error('Error:', error);
         // Acá se hace algo cuando hay error
-      },
-      () => {
-        // Acá se hace algo cuando se completa
       }
     );
   }
