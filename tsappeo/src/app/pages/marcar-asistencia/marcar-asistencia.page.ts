@@ -35,10 +35,6 @@ export class MarcarAsistenciaPage implements OnInit {
     this.user = this.utils.getElementInLocalStorage('userData'); // Se obtienen los datos del usuario conectado
   }
 
-  registroExitoso() {
-    this.agregarAsistencia();
-  }
-
   agregarAsistencia(){
     let path = `user/${this.user.uid}`;
     this.utils.presentLoading();
@@ -58,6 +54,7 @@ export class MarcarAsistenciaPage implements OnInit {
               if (asistencia.fecha == this.nuevaAsistencia.fecha) { // Se valida que la fecha sea distinta
 
                 this.toast('Ya hay una asistencia marcada para este día', 'warning', 1000);
+                this.utils.dismissLoading();
 
               } else {
 
