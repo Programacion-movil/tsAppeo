@@ -17,9 +17,10 @@ export class MarcarAsistenciaPage implements OnInit {
 
   user = {} as User;
   asignaturas: Asignatura[] = [];
+  asignatura = {} as Asignatura | null;
 
   nuevaAsistencia: Asistencia = {
-    fecha: "14/10/2012",
+    fecha: "16/10/2012",
     hora: "19:10",
     estaPresente: true,
   };
@@ -43,45 +44,44 @@ export class MarcarAsistenciaPage implements OnInit {
       next: (res: any) => {
 
         this.asignaturas = res as Asignatura[];
-        this.asignaturas.forEach(asignatura => {
+        this.asignatura = this.encontrarAsignatura(this.asignaturas, this.nombreAsignatura) // Busca la asignatura
 
-          if (asignatura.nombre_asig == this.nombreAsignatura) { // Se encuentra la asignatura
+          if (this.asignatura != null) { // Evalúa el resultado
 
-            let asistencias = Array.from(asignatura.asistencia) as Asistencia[]; // Se guardan todas las asitencias en un array
-
-            asistencias.forEach(asistencia => {
-
-              if (asistencia.fecha == this.nuevaAsistencia.fecha) { // Se valida que la fecha sea distinta
-
+              let asistencias = Array.from(this.asignatura.asistencia) as Asistencia[]; // Se guardan todas las asitencias en un array
+  
+              if (this.validarFecha(asistencias, this.nuevaAsistencia.fecha)) {
+  
                 this.toast('Ya hay una asistencia marcada para este día', 'warning', 1000);
                 this.utils.dismissLoading();
-
+  
               } else {
-
+  
                 asistencias.push(this.nuevaAsistencia); // Se agrega la nueva asistencia al array
-
-                let pathAsignatura = `user/${this.user.uid}/asignatura/${asignatura.id}`;
-
+  
+                let pathAsignatura = `user/${this.user.uid}/asignatura/${this.asignatura.id}`;
+  
                 this.crud.updateDocument(pathAsignatura, { asistencia: asistencias }).then(resultado =>{ // Se inserta el array de asistencia en Firebase
-                this.toast('Asitencia actualizada correctamente','success', 1000);
+                this.toast('Asitencia ingresada correctamente','success', 1000);
                 this.utils.dismissLoading();
-
+  
                 }, error => {
-
+  
                   this.toast(error, 'warning', 1000);
                   this.utils.dismissLoading();
-
+  
                 });
               }
-            });
+          } else {
+            this.toast('No se ha encontrado la asignatura', 'warning', 1000);
+            this.utils.dismissLoading();
           }
-        });
-
       sub.unsubscribe();
       }
     });
   }
 
+  // Método para levantar un mensaje
   toast(message: any, color: string, duration: number){
     this.utils.presentToast({
       message: message.toString(),
@@ -90,6 +90,26 @@ export class MarcarAsistenciaPage implements OnInit {
       duration: duration
     });
 
+  }
+
+  // Recorre el listado de asignaturas del usuario y lo evalúa contra la asignatura que se desea marcar asistencia
+  encontrarAsignatura(asignaturas: Asignatura[], asignaturaObj: string): Asignatura | null {
+    for (const asignatura of asignaturas) {
+      if (asignatura.nombre_asig === asignaturaObj) {
+        return asignatura;
+      }
+    }
+    return null;
+  }
+
+  // Recorre el lista de asistencias y evalúa las fechas para no registrar dos veces una asistencia
+  validarFecha(asistencias: Asistencia[], fechaNuevaAsis: string): boolean {
+    for (const asistencia of asistencias) {
+      if (asistencia.fecha === fechaNuevaAsis) {
+        return true;
+      }
+    }
+    return false;
   }
 
 
