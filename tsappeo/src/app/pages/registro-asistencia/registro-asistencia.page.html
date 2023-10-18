@@ -10,7 +10,7 @@
     <ion-grid>
       <ion-row >
         <ion-col id="titulo">
-          <h1 class="bold">ASISTENCIAS REGISTRADAS {{this.asignaturas[0]}}
+          <h1 class="bold">ASISTENCIAS REGISTRADAS
           </h1>
         </ion-col>
       </ion-row>
@@ -39,6 +39,7 @@
         </ion-col> 
         </ion-row>
 
+        <!--
         <ion-row >
           <ion-col size="3"> 
             <ion-item>
@@ -61,8 +62,17 @@
           </ion-item>
         </ion-col> 
         </ion-row>
+-->
+<!--datos de asistencia desde bd-->
+<ion-row>
+  <ion-col size="3" *ngFor="let asignatura of asignaturas"> <!-- Aquí utilizamos *ngFor -->
+    <ion-item>
+      <ion-textarea [readonly]="true" [placeholder]="asignatura.nombre_asig"></ion-textarea>
+    </ion-item>
+  </ion-col>
+</ion-row>
 
-        <ion-row >
+       <!-- <ion-row >
           <ion-col size="3"> 
             <ion-item>
               <ion-textarea [readonly]="true" placeholder="13/09/2023" ></ion-textarea>
@@ -108,7 +118,7 @@
         </ion-col> 
         </ion-row>
 
-        
+-->        
   
         
         
