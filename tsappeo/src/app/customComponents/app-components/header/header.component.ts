@@ -14,10 +14,9 @@ import { PerfilPage } from 'src/app/pages/perfil/perfil.page';
 })
 export class HeaderComponent  implements OnInit {
 
-  perfil = {} as Perfil
   user = {} as User;
 
-  //userName: string = this.utils.getElementInLocalStorage('userData').userName
+  userName: string = this.utils.getElementInLocalStorage('userData').email
   
 
   constructor(
@@ -29,23 +28,6 @@ export class HeaderComponent  implements OnInit {
     this.user = this.utils.getElementInLocalStorage('userData');
   }
 
-  ionViewWillEnter() {
-    this.getPefilData()
-  }
-  
-  getPefilData() {
-    let path = `user/${this.user.uid}`;
 
-    let sub = this.crud.getSubcollection(path, 'profile').subscribe(
-      (res: any) => {
-        console.log(res);
-        this.perfil = res[0]; // Se llena el objeto perfil para usarlo en el front
-        sub.unsubscribe();
-      },
-      (error) => {
-        console.error('Error:', error);
-        // Acá se hace algo cuando hay error
-      }
-    );
-  }
+
 }
