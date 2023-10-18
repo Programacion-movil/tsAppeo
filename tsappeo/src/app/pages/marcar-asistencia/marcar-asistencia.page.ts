@@ -20,7 +20,7 @@ export class MarcarAsistenciaPage implements OnInit {
   asignatura = {} as Asignatura | null;
 
   nuevaAsistencia: Asistencia = {
-    fecha: "16/10/2012",
+    fecha: "17/10/2023",
     hora: "19:10",
     estaPresente: true,
   };
