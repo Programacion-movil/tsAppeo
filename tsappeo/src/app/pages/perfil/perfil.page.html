@@ -8,7 +8,7 @@
   <ion-grid>
     <ion-row >
       <ion-col id="titulo">
-        <h1 class="bold">PERFIL
+        <h1 class="bold">PERFIL 
         </h1>
       </ion-col>
     </ion-row>
@@ -20,7 +20,7 @@
         </ion-col> 
         <ion-col>
         <ion-item>
-          <ion-textarea [readonly]="true"  placeholder="Juanito Perez"></ion-textarea>
+          <ion-textarea [readonly]="true"  placeholder={{this.perfil.nombre}}></ion-textarea>
         </ion-item>
       </ion-col> 
       </ion-row>
@@ -33,7 +33,7 @@
         </ion-col> 
         <ion-col> 
           <ion-item>
-            <ion-textarea [readonly]="true"  placeholder="15.444.555-K"></ion-textarea>
+            <ion-textarea [readonly]="true"  placeholder={{this.perfil.rut}}></ion-textarea>
           </ion-item>
         </ion-col> 
       </ion-row>
@@ -46,7 +46,7 @@
         </ion-col> 
         <ion-col> 
           <ion-item>
-            <ion-textarea [readonly]="true" placeholder="Analista"></ion-textarea>
+            <ion-textarea [readonly]="true" placeholder={{this.perfil.carrera}}></ion-textarea>
           </ion-item>
         </ion-col>
       </ion-row>
@@ -59,7 +59,7 @@
         </ion-col> 
         <ion-col> 
           <ion-item > 
-            <ion-textarea  [readonly]="true" placeholder="juanito.perez@duocuc.cl"></ion-textarea>
+            <ion-textarea  [readonly]="true" placeholder={{this.perfil.correo}}></ion-textarea>
           </ion-item>
         </ion-col> 
       </ion-row>
