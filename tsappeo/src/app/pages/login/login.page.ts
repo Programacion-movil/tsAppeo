@@ -26,7 +26,7 @@ export class LoginPage implements OnInit {
   password: string = "";
 
   async login() { //Se debe mejorar este login: Controlar formulario, errores, popup de carga, mensaje de error al fallar autenticación o cosas así
-
+    this.utils.presentLoading({message: 'Autenticando...' });
     try {
       const user = await this.auth.doLogin(this.email, this.password);
       if (user) { //La autenticación fue correcta
@@ -38,15 +38,23 @@ export class LoginPage implements OnInit {
             }
             console.log(userInfo)
             this.getPefilData(userModel.uid);
-            
             this.utils.setElementInLocalStorage("userData", userModel); //Guarda userModel en el localstorage para poder utilizarlo en otras pages
+            this.utils.dismissLoading();
+            this.email = "";
+            this.password = "";
             this.utils.routerLink('/marcar-asistencia');
+          } else {
+            this.utils.dismissLoading();
+            this.toast('No se pudo obtener información de usuario', 'warning', 1000);
           }
 
       } else {
+        this.utils.dismissLoading();
+        this.toast('No se pudo realizar conexión', 'warning', 1000);
       }
     } catch (error) {
-      console.error("Error de autenticación:");
+      this.utils.dismissLoading();
+      this.toast('Error de conexión, revise los datos ingresados', 'warning', 1000);
       return
     }
 
@@ -67,6 +75,15 @@ export class LoginPage implements OnInit {
         // Acá se hace algo cuando hay error
       }
     );
+  }
+  
+  toast(message: any, color: string, duration: number){
+    this.utils.presentToast({
+      message: message.toString(),
+      color: color,
+      icon: 'alert-circle-outline',
+      duration: duration
+    });
   }
 
 }
