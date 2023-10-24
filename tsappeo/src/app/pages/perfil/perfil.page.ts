@@ -31,12 +31,12 @@ export class PerfilPage implements OnInit {
 
     let sub = this.crud.getSubcollection(path, 'profile').subscribe(
       (res: any) => {
-        console.log(res);
+        //console.log(res);
         this.perfil = res[0]; // Se llena el objeto perfil para usarlo en el front
         sub.unsubscribe();
       },
       (error) => {
-        console.error('Error:', error);
+        //console.error('Error:', error);
         // Acá se hace algo cuando hay error
       }
     );

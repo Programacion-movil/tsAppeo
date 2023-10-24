@@ -31,11 +31,11 @@ export class RegistroAsistenciaPage implements OnInit {
 
     let sub = this.crud.getSubcollection(path, 'asignatura').subscribe({
       next: (res: any) => {
-        console.log(res);
+        //console.log(res);
         // Se llena el objeto asignatura para utilizarlo en el front
         this.asignaturas = res as Asignatura[];
         // Hay un problema en la fecha, no puedo capturarlo bien
-        console.log("este es el objeto asignaturas" + this.asignaturas[0].nombre_asig + this.asignaturas[0].seccion + this.asignaturas[0].asistencia[0].fecha + this.asignaturas[0].asistencia[0].estaPresente);
+        //console.log("este es el objeto asignaturas" + this.asignaturas[0].nombre_asig + this.asignaturas[0].seccion + this.asignaturas[0].asistencia[0].fecha + this.asignaturas[0].asistencia[0].estaPresente);
         sub.unsubscribe();
       }
     })

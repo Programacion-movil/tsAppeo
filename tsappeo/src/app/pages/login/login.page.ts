@@ -36,7 +36,7 @@ export class LoginPage implements OnInit {
               uid: userInfo.uid,
               email: userInfo.email!
             }
-            console.log(userInfo)
+            //console.log(userInfo)
             this.getPefilData(userModel.uid);
             this.utils.setElementInLocalStorage("userData", userModel); //Guarda userModel en el localstorage para poder utilizarlo en otras pages
             this.utils.dismissLoading();
@@ -65,13 +65,13 @@ export class LoginPage implements OnInit {
 
     let sub = this.crud.getSubcollection(path, 'profile').subscribe(
       (res: any) => {
-        console.log(res);
+        //console.log(res);
         this.perfil = res[0] as Perfil; // Se llena el objeto perfil para usarlo en el front
         this.utils.setElementInLocalStorage('profileData', this.perfil);
         sub.unsubscribe();
       },
       (error) => {
-        console.error('Error:', error);
+        //console.error('Error:', error);
         // Acá se hace algo cuando hay error
       }
     );
