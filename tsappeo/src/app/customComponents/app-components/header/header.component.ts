@@ -14,19 +14,17 @@ import { PerfilPage } from 'src/app/pages/perfil/perfil.page';
 })
 export class HeaderComponent  implements OnInit {
 
-  user = {} as User;
-
-  userName: string = this.utils.getElementInLocalStorage('userData').email
+  userName: string = "" 
   
 
   constructor(
-    private crud: CrudService,
     private utils: UtilsService
   ) { }
 
   ngOnInit() {
-    this.user = this.utils.getElementInLocalStorage('userData');
+    this.userName = this.utils.getElementInLocalStorage('profileData').nombre;
   }
+
 
 
 

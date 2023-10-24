@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
 import { User } from 'src/app/models/user.models';
 import { UtilsService } from 'src/app/services/utils.service';
+import { CrudService } from 'src/app/services/crud.service';
+import { Perfil } from 'src/app/models/perfil.models';
 
 @Component({
   selector: 'app-login',
@@ -9,10 +11,13 @@ import { UtilsService } from 'src/app/services/utils.service';
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage implements OnInit {
+
+  perfil = {} as Perfil;
   
   constructor(
     private auth: AuthService,
-    private utils: UtilsService) { }
+    private utils: UtilsService,
+    private crud: CrudService) { }
 
   ngOnInit() {
   }
@@ -32,6 +37,8 @@ export class LoginPage implements OnInit {
               email: userInfo.email!
             }
             console.log(userInfo)
+            this.getPefilData(userModel.uid);
+            
             this.utils.setElementInLocalStorage("userData", userModel); //Guarda userModel en el localstorage para poder utilizarlo en otras pages
             this.utils.routerLink('/marcar-asistencia');
           }
@@ -43,6 +50,23 @@ export class LoginPage implements OnInit {
       return
     }
 
+  }
+
+  getPefilData(uid: string) {
+    let path = `user/${uid}`;
+
+    let sub = this.crud.getSubcollection(path, 'profile').subscribe(
+      (res: any) => {
+        console.log(res);
+        this.perfil = res[0] as Perfil; // Se llena el objeto perfil para usarlo en el front
+        this.utils.setElementInLocalStorage('profileData', this.perfil);
+        sub.unsubscribe();
+      },
+      (error) => {
+        console.error('Error:', error);
+        // Acá se hace algo cuando hay error
+      }
+    );
   }
 
 }

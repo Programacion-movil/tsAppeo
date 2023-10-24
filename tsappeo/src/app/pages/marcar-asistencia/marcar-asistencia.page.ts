@@ -20,7 +20,7 @@ export class MarcarAsistenciaPage implements OnInit {
   asignatura = {} as Asignatura | null;
 
   nuevaAsistencia: Asistencia = {
-    fecha: "17/10/2023",
+    fecha: "18/10/2023",
     hora: "19:10",
     estaPresente: true,
   };
@@ -29,8 +29,8 @@ export class MarcarAsistenciaPage implements OnInit {
 
   constructor(
     private utils: UtilsService,
-    private crud: CrudService,
-    private alertController: AlertController) { }
+    private crud: CrudService
+  ) { }
 
   ngOnInit() {
     this.user = this.utils.getElementInLocalStorage('userData'); // Se obtienen los datos del usuario conectado
