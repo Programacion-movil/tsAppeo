@@ -10,6 +10,8 @@ import { MarcarAsistenciaPage } from './marcar-asistencia.page';
 
 import { AppComponentsModule } from 'src/app/customComponents/app-components/app-components.module';
 
+import { LocationAccuracy } from '@awesome-cordova-plugins/location-accuracy';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -18,6 +20,10 @@ import { AppComponentsModule } from 'src/app/customComponents/app-components/app
     MarcarAsistenciaPageRoutingModule,
     AppComponentsModule
   ],
-  declarations: [MarcarAsistenciaPage]
+  declarations: [MarcarAsistenciaPage],
+  providers: [
+    LocationAccuracy,
+  ]
+  
 })
 export class MarcarAsistenciaPageModule {}
