@@ -1,15 +1,18 @@
-import { Injectable } from '@angular/core';
-
+import { Component } from '@angular/core';
+import { IonicModule } from '@ionic/angular';
 import { Geolocation } from '@capacitor/geolocation';
 import { AndroidSettings, IOSSettings, NativeSettings } from 'capacitor-native-settings';
 import { Capacitor } from '@capacitor/core';
 import { LocationAccuracy } from '@awesome-cordova-plugins/location-accuracy/ngx';
 
-
-@Injectable({
-  providedIn: 'root'
+@Component({
+  selector: 'app-geolocation',
+  templateUrl: './geolocation.component.html',
+  styleUrls: ['./geolocation.component.scss'],
+  standalone: true,
+  imports: [IonicModule],
 })
-export class GeolocationService {
+export class GeolocationComponent {
 
   position: any;
 
@@ -71,4 +74,7 @@ export class GeolocationService {
     }
     
   }
+
+  
+
 }

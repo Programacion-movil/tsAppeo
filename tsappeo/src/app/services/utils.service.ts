@@ -3,17 +3,24 @@ import { AlertController, AlertOptions, LoadingController, LoadingOptions, Modal
 import { Router } from '@angular/router';
 
 
+
+import { Geolocation } from '@capacitor/geolocation';
+
+
+
+
+
 @Injectable({
   providedIn: 'root'
 })
 export class UtilsService {
-
+  position: any;
   constructor(
     private loadingController: LoadingController,
     private router: Router,
     private toastController: ToastController,
     private alertController: AlertController,
-    private modalController: ModalController
+    private modalController: ModalController,
   ) { }
 
   // Loading
@@ -73,6 +80,23 @@ export class UtilsService {
   dismssModal(data?: any) {
     this.modalController.dismiss(data);
   }
+
+  //Geolocalizacion
+ async obtenerUbicacion(): Promise<any> {
+  try {
+    const coordenadas=await Geolocation.getCurrentPosition();
+    return {latitud: coordenadas.coords.latitude,
+            longitud: coordenadas.coords.longitude};
+    
+  } catch (e) {
+    console.error("vvvvv", e);
+    return null;
+    
+  }
+
+ }
+
+
 
 
 }

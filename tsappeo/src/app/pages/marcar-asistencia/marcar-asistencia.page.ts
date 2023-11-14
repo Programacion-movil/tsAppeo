@@ -4,7 +4,6 @@ import { Asignatura, Asistencia } from 'src/app/models/asignatura.models';
 import { User } from 'src/app/models/user.models';
 import { CrudService } from 'src/app/services/crud.service';
 import { UtilsService } from 'src/app/services/utils.service';
-import { GeolocationService } from 'src/app/services/geolocation.service';
 
 import * as firebase from 'firebase/app';
 import 'firebase/firestore';
@@ -15,6 +14,12 @@ import 'firebase/firestore';
   styleUrls: ['./marcar-asistencia.page.scss'],
 })
 export class MarcarAsistenciaPage implements OnInit {
+
+  async mostarUbicacion() {
+    const ubicacion= await this.utils.obtenerUbicacion();
+    console.log(ubicacion);
+  }
+
 
   user = {} as User;
   asignaturas: Asignatura[] = [];
@@ -31,12 +36,12 @@ export class MarcarAsistenciaPage implements OnInit {
   constructor(
     private utils: UtilsService,
     private crud: CrudService,
-    private geolocationService: GeolocationService
   ) { }
 
   ngOnInit() {
     this.user = this.utils.getElementInLocalStorage('userData'); // Se obtienen los datos del usuario conectado
-    this.getLocation();
+
+
   }
 
   agregarAsistencia(){
@@ -115,14 +120,9 @@ export class MarcarAsistenciaPage implements OnInit {
     return false;
   }
 
-  getLocation() {
-    this.geolocationService.getCurrentLocation().then((resp: any) => {
-      console.log('Latitude: ' + resp.coords.latitude);
-      console.log('Longitude: ' + resp.coords.longitude);
-    }).catch((error) => {
-      console.error('Error getting location', error);
-    });
-  }
+
+
+  
 
 
 
