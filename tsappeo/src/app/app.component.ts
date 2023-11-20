@@ -16,9 +16,9 @@ export class AppComponent {
   }
 
   initializeApp() {
-    /*this.platform.ready().then(() => {
+    this.platform.ready().then(() => {
       this.router.navigateByUrl('pagina-carga')
-    });*/
+    });
   } 
   
 }

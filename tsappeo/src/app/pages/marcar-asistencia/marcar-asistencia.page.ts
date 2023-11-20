@@ -15,12 +15,6 @@ import 'firebase/firestore';
 })
 export class MarcarAsistenciaPage implements OnInit {
 
-  async mostarUbicacion() {
-    const ubicacion= await this.utils.obtenerUbicacion();
-    console.log(ubicacion);
-  }
-
-
   user = {} as User;
   asignaturas: Asignatura[] = [];
   asignatura = {} as Asignatura | null;
@@ -118,6 +112,13 @@ export class MarcarAsistenciaPage implements OnInit {
       }
     }
     return false;
+  }
+
+  //Genera geolocalización
+
+  async mostarUbicacion() {
+    const ubicacion= await this.utils.obtenerUbicacion();
+    console.log(ubicacion);
   }
 
 

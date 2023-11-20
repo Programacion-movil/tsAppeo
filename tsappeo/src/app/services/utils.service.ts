@@ -89,7 +89,7 @@ export class UtilsService {
             longitud: coordenadas.coords.longitude};
     
   } catch (e) {
-    console.error("vvvvv", e);
+    console.error("No se reciben datos de geolocalización", e);
     return null;
     
   }
