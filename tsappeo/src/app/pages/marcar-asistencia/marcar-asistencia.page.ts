@@ -32,6 +32,8 @@ export class MarcarAsistenciaPage implements OnInit {
     private crud: CrudService,
   ) { }
 
+  ubicacion: any;
+
   ngOnInit() {
     this.user = this.utils.getElementInLocalStorage('userData'); // Se obtienen los datos del usuario conectado
 
@@ -119,6 +121,21 @@ export class MarcarAsistenciaPage implements OnInit {
   async mostarUbicacion() {
     const ubicacion= await this.utils.obtenerUbicacion();
     console.log(ubicacion);
+  }
+
+  async validaUbicacion() {
+    const ubicacionReferencia= {latitud: -33.36301,
+      longitud: -70.67574}
+    let ubicacionActual= await this.utils.obtenerUbicacion();
+
+    if (ubicacionActual== ubicacionReferencia) {
+      console.log(ubicacionActual)
+      console.log("Ubicación corresponde a Duoc")
+      
+    } else {
+      console.log(ubicacionActual)
+      console.log("Ubicación fuera del perímetro")
+    }
   }
 
 
