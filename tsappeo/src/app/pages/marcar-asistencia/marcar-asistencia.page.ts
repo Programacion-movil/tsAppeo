@@ -116,28 +116,48 @@ export class MarcarAsistenciaPage implements OnInit {
     return false;
   }
 
-  //Genera geolocalización
+  
+  // Función para calcular la distancia entre dos puntos geográficos usando la fórmula de Haversine
+calcularDistancia(lat1: number, lon1: number, lat2: number, lon2: number): number {
+  const radioTierra = 6371; // Radio de la Tierra en kilómetros
+  const dLat = this.toRadians(lat2 - lat1);
+  const dLon = this.toRadians(lon2 - lon1);
+  const a =
+    Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+    Math.cos(this.toRadians(lat1)) * Math.cos(this.toRadians(lat2)) * Math.sin(dLon / 2) * Math.sin(dLon / 2);
+  const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+  const distancia = radioTierra * c; // Distancia en kilómetros
+  console.log(distancia);
+  return distancia;
+} 
 
-  async mostarUbicacion() {
-    const ubicacion= await this.utils.obtenerUbicacion();
-    console.log(ubicacion);
+// Función para convertir grados a radianes
+toRadians(grados: number): number {
+  return grados * (Math.PI / 180);
+}
+
+// Función para validar la ubicación dentro de un perímetro
+async validaUbicacion() {
+  const ubicacionReferencia = { latitud: -70.67801353838364, longitud: -33.3632467844189 };
+  const ubicacionActual = await this.utils.obtenerUbicacion();
+
+  const distanciaLimiteKm = 0.025; // Define el radio del perímetro en kilómetros
+
+  const distancia = this.calcularDistancia(
+    ubicacionReferencia.latitud,
+    ubicacionReferencia.longitud,
+    ubicacionActual.latitud,
+    ubicacionActual.longitud
+  );
+
+  if (distancia <= distanciaLimiteKm) {
+    console.log(ubicacionActual);
+    console.log("El dispositivo se encuentra dentro del perímetro");
+  } else {
+    console.log(ubicacionActual);
+    console.log("El dispositivo está fuera del perímetro");
   }
-
-  async validaUbicacion() {
-    const ubicacionReferencia= {latitud: -33.36301,
-      longitud: -70.67574}
-    let ubicacionActual= await this.utils.obtenerUbicacion();
-
-    if (ubicacionActual== ubicacionReferencia) {
-      console.log(ubicacionActual)
-      console.log("Ubicación corresponde a Duoc")
-      
-    } else {
-      console.log(ubicacionActual)
-      console.log("Ubicación fuera del perímetro")
-    }
-  }
-
+}
 
 
   
