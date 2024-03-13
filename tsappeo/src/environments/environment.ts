@@ -3,7 +3,15 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  firebaseConfig : { // Se está usando el del correo pagapp
+    apiKey: "AIzaSyAJMuFY0ye_R2Npr6yaYNfkEWLmjllUeFw",
+    authDomain: "tsappeo.firebaseapp.com",
+    projectId: "tsappeo",
+    storageBucket: "tsappeo.appspot.com",
+    messagingSenderId: "877182790363",
+    appId: "1:877182790363:web:6583bec0c77ce9b3d9bafe"
+  }
 };
 
 /*

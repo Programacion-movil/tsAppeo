@@ -23,11 +23,11 @@
   <form>
     <ion-item lines="full">
       <ion-label position="floating">Usuario</ion-label>
-      <ion-input type="text" required [(ngModel)]="userName" name="userName"></ion-input>
+      <ion-input type="email" required [(ngModel)]="email" name="email"></ion-input>
     </ion-item>
     <ion-item lines="full">
       <ion-label position="floating">Contraseña</ion-label>
-      <ion-input type="password"  required></ion-input>
+      <ion-input type="password" required [(ngModel)]="password" name="password"></ion-input>
     </ion-item>
     <ion-row>
       <ion-col class="btn-marcar">

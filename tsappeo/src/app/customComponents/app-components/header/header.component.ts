@@ -1,4 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { Perfil } from 'src/app/models/perfil.models';
+import { User } from 'src/app/models/user.models';
+import { CrudService } from 'src/app/services/crud.service';
+import { UtilsService } from 'src/app/services/utils.service';
+
+import { PerfilPage } from 'src/app/pages/perfil/perfil.page';
+
 
 @Component({
   selector: 'app-header',
@@ -7,10 +14,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent  implements OnInit {
 
-  userName = localStorage.getItem("userName");
+  userName: string = "" 
+  
 
-  constructor() { }
+  constructor(
+    private utils: UtilsService
+  ) { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.userName = this.utils.getElementInLocalStorage('profileData').nombre;
+  }
+
+
+
 
 }

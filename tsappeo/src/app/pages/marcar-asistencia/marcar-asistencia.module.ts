@@ -10,6 +10,7 @@ import { MarcarAsistenciaPage } from './marcar-asistencia.page';
 
 import { AppComponentsModule } from 'src/app/customComponents/app-components/app-components.module';
 
+
 @NgModule({
   imports: [
     CommonModule,
@@ -18,6 +19,7 @@ import { AppComponentsModule } from 'src/app/customComponents/app-components/app
     MarcarAsistenciaPageRoutingModule,
     AppComponentsModule
   ],
-  declarations: [MarcarAsistenciaPage]
+  declarations: [MarcarAsistenciaPage],
+  
 })
 export class MarcarAsistenciaPageModule {}
